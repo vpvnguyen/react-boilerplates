@@ -1,3 +1,10 @@
-const Home = () => <div>Home Page</div>;
+import HomeComponent from "../components/Home.component";
 
-export default Home;
+const HomePage = () => (
+  <div>
+    <h1>Home Page</h1>
+    <HomeComponent />
+  </div>
+);
+
+export default HomePage;
