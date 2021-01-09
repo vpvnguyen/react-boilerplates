@@ -1,5 +1,5 @@
-import logo from "./logo.svg"
-import "./App.css"
+import logo from "./logo.svg";
+import "./App.css";
 
 const App = () => (
   <div className='App'>
@@ -8,6 +8,7 @@ const App = () => (
       <p>
         Edit <code>src/App.tsx</code> and save to reload.
       </p>
+      {process.env.NODE_ENV}
       <a
         className='App-link'
         href='https://reactjs.org'
@@ -18,6 +19,6 @@ const App = () => (
       </a>
     </header>
   </div>
-)
+);
 
-export default App
+export default App;
