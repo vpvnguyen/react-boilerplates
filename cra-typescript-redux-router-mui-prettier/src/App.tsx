@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import RootLayout from "./layouts/Root.layouts";
 import HomePage from "./pages/Home.page";
 import DashboardPage from "./pages/Dashboard.page";
+import AuthenticationComponent from "./components/Authentication.component";
+import NavbarComponent from "./components/Navbar.component";
 
 const App = () => (
   <div className='App'>
@@ -15,12 +17,8 @@ const App = () => (
 
       <RootLayout>
         <Router>
-          <div>
-            <Link to='/'>Home Page</Link>
-          </div>
-          <div>
-            <Link to='/dashboard'>Dashboard Page</Link>
-          </div>
+          <NavbarComponent />
+          <AuthenticationComponent />
 
           <Switch>
             <Route exact path='/'>
