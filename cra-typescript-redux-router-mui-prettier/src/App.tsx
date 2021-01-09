@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/Home.page";
+import RootLayout from "./layouts/Root.layouts";
+import HomePage from "./pages/Home.page";
+import DashboardPage from "./pages/Dashboard.page";
 
 const App = () => (
   <div className='App'>
@@ -11,17 +13,25 @@ const App = () => (
         Environment: <code>{process.env.NODE_ENV}</code>
       </p>
 
-      <Router>
-        <div>
-          <Link to='/'>Home Page</Link>
+      <RootLayout>
+        <Router>
+          <div>
+            <Link to='/'>Home Page</Link>
+          </div>
+          <div>
+            <Link to='/dashboard'>Dashboard Page</Link>
+          </div>
 
           <Switch>
             <Route exact path='/'>
-              <Home />
+              <HomePage />
+            </Route>
+            <Route path='/dashboard'>
+              <DashboardPage />
             </Route>
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </RootLayout>
     </header>
   </div>
 );
