@@ -6,6 +6,7 @@ interface RootLayoutProps {
 
 const style: CSSProperties = {
   borderStyle: "dotted",
+  padding: "20px",
 };
 
 const RootLayout = ({ children }: RootLayoutProps) => (
