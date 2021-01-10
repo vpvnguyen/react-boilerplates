@@ -78,6 +78,6 @@ yarn eject
 
 ## References
 
-[TS+React Cheat Sheet](https://github.com/typescript-cheatsheets/react)
-[TS Compiler Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+[TS+React Cheat Sheet](https://github.com/typescript-cheatsheets/react)  
+[TS Compiler Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html)  
 [Prettier Config File](https://prettier.io/docs/en/configuration.html)
