@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import RootLayout from "./layouts/Root.layouts";
+import RootLayout from "./layouts/Root.layout";
 import HomePage from "./pages/Home.page";
 import DashboardPage from "./pages/Dashboard.page";
 import AuthenticationComponent from "./components/Authentication.component";
