@@ -6,11 +6,14 @@ interface RootLayoutProps {
 
 const style: CSSProperties = {
   borderStyle: "dotted",
-  padding: "20px",
+  padding: "40px",
 };
 
 const RootLayout = ({ children }: RootLayoutProps) => (
-  <div style={style}>RootLayout{children}</div>
+  <>
+    <div>RootLayout</div>
+    <div style={style}>{children}</div>
+  </>
 );
 
 export default RootLayout;
