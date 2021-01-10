@@ -5,6 +5,7 @@ import DashboardComponent from "../components/Dashboard.component";
 const style: CSSProperties = {
   borderStyle: "solid",
 };
+
 const DashboardPage = () => (
   <div style={style}>
     <Typography variant='h1'>Dashboard Page</Typography>
