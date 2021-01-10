@@ -6,6 +6,7 @@ import HomePage from "./pages/Home.page";
 import DashboardPage from "./pages/Dashboard.page";
 import AuthenticationComponent from "./components/Authentication.component";
 import NavbarComponent from "./components/Navbar.component";
+import CounterComponent from "./components/Counter.component";
 
 const App = () => (
   <div className='App'>
@@ -19,6 +20,7 @@ const App = () => (
         <Router>
           <NavbarComponent />
           <AuthenticationComponent />
+          <CounterComponent />
 
           <Switch>
             <Route exact path='/'>
