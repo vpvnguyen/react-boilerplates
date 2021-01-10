@@ -47,6 +47,7 @@ const CounterComponent = () => {
       </div>
       <div>
         <TextField
+          variant='outlined'
           aria-label='Set increment amount'
           value={incrementAmount}
           onChange={(event) => setIncrementAmount(event.target.value)}
