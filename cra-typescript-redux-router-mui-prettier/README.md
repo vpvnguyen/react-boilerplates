@@ -5,7 +5,7 @@
 [React](https://reactjs.org/) 17.0.1\
 [Typescript](https://www.typescriptlang.org/) 4.0.3\
 [Redux](https://redux.js.org/) 4.0.5\
-[React Router](https://reactrouter.com/)5.2.0\
+[React Router](https://reactrouter.com/) 5.2.0\
 [Material-UI](https://material-ui.com/) 4.11.2\
 [Prettier](https://prettier.io/) 2.2.1
 
