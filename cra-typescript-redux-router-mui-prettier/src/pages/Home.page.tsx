@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { Typography } from "@material-ui/core";
 import HomeComponent from "../components/Home.component";
 
 const style: CSSProperties = {
@@ -7,7 +8,7 @@ const style: CSSProperties = {
 
 const HomePage = () => (
   <div style={style}>
-    <h1>Home Page</h1>
+    <Typography variant='h1'>Home Page</Typography>
     <HomeComponent />
   </div>
 );

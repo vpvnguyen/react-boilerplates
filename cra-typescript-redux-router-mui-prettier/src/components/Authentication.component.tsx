@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { Button, Typography } from "@material-ui/core";
 
 const style: CSSProperties = {
   borderStyle: "solid",
@@ -6,10 +7,14 @@ const style: CSSProperties = {
 
 const AuthenticationComponent = () => (
   <div style={style}>
-    <h1>Authentication Component</h1>
-    <p>Authentication State: Logged out</p>
-    <button>Login</button>
-    <button>Logout</button>
+    <Typography variant='h1'>Authentication Component</Typography>
+    <Typography>Authentication State: Logged out</Typography>
+    <Button variant='contained' size='large' color='primary'>
+      Login
+    </Button>
+    <Button variant='contained' size='large' color='secondary'>
+      Logout
+    </Button>
   </div>
 );
 

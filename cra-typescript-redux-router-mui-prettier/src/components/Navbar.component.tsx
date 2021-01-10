@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const style: CSSProperties = {
@@ -7,7 +8,7 @@ const style: CSSProperties = {
 
 const NavbarComponent = () => (
   <div style={style}>
-    <h1>Navbar Component</h1>
+    <Typography variant='h1'>Navbar Component</Typography>
     <div>
       <Link to='/'>Home Page</Link>
     </div>
