@@ -1,13 +1,12 @@
 import { useState, CSSProperties } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, TextField, Typography } from "@material-ui/core";
-
+import { selectCount } from "../redux/selectors/counterSelector";
 import {
   decrement,
   increment,
   incrementByAmount,
   incrementAsync,
-  selectCount,
 } from "../redux/reducers/counterSlice";
 
 const style: CSSProperties = {
