@@ -19,10 +19,6 @@ const AuthenticationComponent = () => {
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const dispatch = useDispatch();
 
-  console.log("auth");
-  console.log(authentication);
-  console.log(isAuthenticated);
-
   return (
     <div style={style}>
       <Typography variant='h1'>Authentication Component</Typography>
