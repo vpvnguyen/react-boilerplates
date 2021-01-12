@@ -1,7 +1,10 @@
 import { CSSProperties } from "react";
 import { Button, Typography } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAuthentication } from "../redux/selectors/authenticationSelector";
+import {
+  selectAuthentication,
+  selectIsAuthenticated,
+} from "../redux/selectors/authenticationSelector";
 import {
   authenticateAsync,
   unauthenticateAsync,
@@ -13,7 +16,12 @@ const style: CSSProperties = {
 
 const AuthenticationComponent = () => {
   const authentication = useSelector(selectAuthentication);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
   const dispatch = useDispatch();
+
+  console.log("auth");
+  console.log(authentication);
+  console.log(isAuthenticated);
 
   return (
     <div style={style}>
@@ -24,6 +32,7 @@ const AuthenticationComponent = () => {
         size='large'
         color='primary'
         onClick={() => dispatch(authenticateAsync())}
+        disabled={isAuthenticated}
       >
         Login
       </Button>
@@ -32,6 +41,7 @@ const AuthenticationComponent = () => {
         size='large'
         color='secondary'
         onClick={() => dispatch(unauthenticateAsync())}
+        disabled={!isAuthenticated}
       >
         Logout
       </Button>
