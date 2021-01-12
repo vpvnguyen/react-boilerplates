@@ -3,10 +3,12 @@ import { AppThunk } from "../store";
 
 interface AuthenticationState {
   value: string;
+  isAuthenticated: boolean;
 }
 
 const initialState: AuthenticationState = {
   value: "UNAUTHENTICATED",
+  isAuthenticated: false,
 };
 
 const authenticationSlice = createSlice({
@@ -19,9 +21,11 @@ const authenticationSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.value = "AUTHENTICATED";
+      state.isAuthenticated = true;
     },
     unauthenticate: (state) => {
       state.value = "UNAUTHENTICATED";
+      state.isAuthenticated = false;
     },
   },
 });
