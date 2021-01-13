@@ -1,4 +1,3 @@
-import { CssBaseline } from "@material-ui/core";
 import { ReactNode, CSSProperties } from "react";
 
 interface RootLayoutProps {
@@ -12,7 +11,6 @@ const style: CSSProperties = {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <>
-    <CssBaseline />
     <div>RootLayout</div>
     <div style={style}>{children}</div>
   </>
