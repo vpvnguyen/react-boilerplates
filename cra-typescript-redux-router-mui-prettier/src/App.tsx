@@ -7,33 +7,64 @@ import DashboardPage from "./pages/Dashboard.page";
 import AuthenticationComponent from "./components/Authentication.component";
 import NavbarComponent from "./components/Navbar.component";
 import CounterComponent from "./components/Counter.component";
+import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        html: {
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
+        },
+      },
+    },
+  },
+  palette: {
+    // type: "dark",
+    // primary: {
+    //   light: "#ffffff",
+    //   main: "#3f51b5",
+    //   dark: "#301934",
+    // },
+    // secondary: {
+    //   light: "#ffcccb",
+    //   main: "#f50057",
+    //   dark: "#B22222",
+    // },
+  },
+});
 
 const App = () => (
-  <div className='App'>
-    <header className='App-header'>
-      <img src={logo} className='App-logo' alt='logo' />
-      <p>
-        Environment: <code>{process.env.NODE_ENV}</code>
-      </p>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
 
-      <RootLayout>
-        <Router>
-          <NavbarComponent />
-          <AuthenticationComponent />
-          <CounterComponent />
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
+        <p>
+          Environment: <code>{process.env.NODE_ENV}</code>
+        </p>
 
-          <Switch>
-            <Route exact path='/'>
-              <HomePage />
-            </Route>
-            <Route path='/dashboard'>
-              <DashboardPage />
-            </Route>
-          </Switch>
-        </Router>
-      </RootLayout>
-    </header>
-  </div>
+        <RootLayout>
+          <Router>
+            <NavbarComponent />
+            <AuthenticationComponent />
+            <CounterComponent />
+
+            <Switch>
+              <Route exact path='/'>
+                <HomePage />
+              </Route>
+              <Route path='/dashboard'>
+                <DashboardPage />
+              </Route>
+            </Switch>
+          </Router>
+        </RootLayout>
+      </header>
+    </div>
+  </ThemeProvider>
 );
 
 export default App;
