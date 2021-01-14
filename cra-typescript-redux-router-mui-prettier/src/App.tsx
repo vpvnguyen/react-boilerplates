@@ -20,17 +20,17 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    // type: "dark",
-    // primary: {
-    //   light: "#ffffff",
-    //   main: "#3f51b5",
-    //   dark: "#301934",
-    // },
-    // secondary: {
-    //   light: "#ffcccb",
-    //   main: "#f50057",
-    //   dark: "#B22222",
-    // },
+    type: "dark",
+    primary: {
+      light: "#ffffff",
+      main: "#3f51b5",
+      dark: "#301934",
+    },
+    secondary: {
+      light: "#ffcccb",
+      main: "#f50057",
+      dark: "#B22222",
+    },
   },
 });
 
