@@ -1,5 +1,5 @@
 import { CSSProperties, Dispatch, useState, useEffect } from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, CircularProgress, Typography } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAuthentication,
@@ -22,10 +22,13 @@ const AuthenticationComponent = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
+  const getAuthenticationToken = async () =>
+    new Promise((resolve) => setTimeout(resolve, 2000));
+
   const handleLogin = async () => {
     setLoading(true);
     setMessage("Logging in...");
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await getAuthenticationToken();
     dispatch(authenticateAsync());
     setLoading(false);
     setMessage("Successfully logged in!");
@@ -34,7 +37,7 @@ const AuthenticationComponent = () => {
   const handleLogout = async () => {
     setLoading(true);
     setMessage("Logging out...");
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await getAuthenticationToken();
     dispatch(unauthenticateAsync());
     setLoading(false);
     setMessage("Successfully logged out!");
@@ -70,6 +73,11 @@ const AuthenticationComponent = () => {
       >
         Logout
       </Button>
+      {loading && (
+        <div>
+          <CircularProgress />
+        </div>
+      )}
       <Typography>{message}</Typography>
     </div>
   );
