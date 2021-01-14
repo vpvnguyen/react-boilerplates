@@ -1,12 +1,12 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import counterReducer from "./reducers/counterSlice";
 import authenticationReducer from "./reducers/authenticationSlice";
 
+const rootReducer = {
+  authentication: authenticationReducer,
+};
+
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    authentication: authenticationReducer,
-  },
+  reducer: rootReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
