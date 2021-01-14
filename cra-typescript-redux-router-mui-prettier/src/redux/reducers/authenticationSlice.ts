@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AppThunk } from "../store";
 
-interface AuthenticationState {
+export interface AuthenticationState {
   value: string;
   isAuthenticated: boolean;
 }
@@ -33,15 +33,11 @@ const authenticationSlice = createSlice({
 export const { authenticate, unauthenticate } = authenticationSlice.actions;
 
 export const authenticateAsync = (): AppThunk => (dispatch) => {
-  setTimeout(() => {
-    dispatch(authenticate());
-  }, 2000);
+  dispatch(authenticate());
 };
 
 export const unauthenticateAsync = (): AppThunk => (dispatch) => {
-  setTimeout(() => {
-    dispatch(unauthenticate());
-  }, 2000);
+  dispatch(unauthenticate());
 };
 
 export default authenticationSlice.reducer;
