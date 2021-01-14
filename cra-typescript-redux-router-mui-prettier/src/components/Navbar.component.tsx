@@ -23,6 +23,8 @@ const NavbarComponent = () => {
           <Link to='/dashboard'>Dashboard Page</Link>
         </div>
       )}
+
+      {!isAuthenticated && <div>Log in to view Dashboard Page</div>}
     </div>
   );
 };
