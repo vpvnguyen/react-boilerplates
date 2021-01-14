@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
-import { Typography } from "@material-ui/core";
 import DashboardComponent from "../components/Dashboard.component";
+import HeaderTitleComponent from "../components/common/HeaderTitle.component";
 
 const style: CSSProperties = {
   borderStyle: "solid",
@@ -8,7 +8,7 @@ const style: CSSProperties = {
 
 const DashboardPage = () => (
   <div style={style}>
-    <Typography variant='h1'>Dashboard Page</Typography>
+    <HeaderTitleComponent title={"Dashboard Page"} />
     <DashboardComponent />
   </div>
 );

@@ -1,8 +1,8 @@
 import { CSSProperties } from "react";
-import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectIsAuthenticated } from "../redux/selectors/authenticationSelector";
+import HeaderTitleComponent from "./common/HeaderTitle.component";
 
 const style: CSSProperties = {
   borderStyle: "solid",
@@ -13,7 +13,7 @@ const NavbarComponent = () => {
 
   return (
     <div style={style}>
-      <Typography variant='h1'>Navbar Component</Typography>
+      <HeaderTitleComponent title={"Navbar Component"} />
       <div>
         <Link to='/'>Home Page</Link>
       </div>

@@ -9,6 +9,7 @@ import {
   authenticateAsync,
   unauthenticateAsync,
 } from "../redux/reducers/authenticationSlice";
+import HeaderTitleComponent from "./common/HeaderTitle.component";
 
 const style: CSSProperties = {
   borderStyle: "solid",
@@ -53,7 +54,7 @@ const AuthenticationComponent = () => {
 
   return (
     <div style={style}>
-      <Typography variant='h1'>Authentication Component</Typography>
+      <HeaderTitleComponent title={"Authentication Component"} />
       <Typography>Authentication State: {authentication}</Typography>
       <Button
         variant='contained'
