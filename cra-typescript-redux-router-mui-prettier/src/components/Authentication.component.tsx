@@ -11,8 +11,26 @@ import {
 } from "../redux/reducers/authenticationSlice";
 import HeaderTitleComponent from "./common/HeaderTitle.component";
 
-const style: CSSProperties = {
-  borderStyle: "solid",
+interface Style {
+  component: CSSProperties;
+  authenticatedText: CSSProperties;
+  unauthenticatedText: CSSProperties;
+  authenticatingText: CSSProperties;
+}
+
+const style: Style = {
+  component: {
+    borderStyle: "solid",
+  },
+  authenticatedText: {
+    color: "green",
+  },
+  unauthenticatedText: {
+    color: "red",
+  },
+  authenticatingText: {
+    color: "lightblue",
+  },
 };
 
 const AuthenticationComponent = () => {
@@ -53,9 +71,24 @@ const AuthenticationComponent = () => {
   );
 
   return (
-    <div style={style}>
+    <div style={style.component}>
       <HeaderTitleComponent title={"Authentication Component"} />
-      <Typography>Authentication State: {authentication}</Typography>
+      <Typography>
+        Authentication State:{" "}
+        {loading ? (
+          <span style={style.authenticatingText}>PENDING...</span>
+        ) : (
+          <span
+            style={
+              isAuthenticated
+                ? style.authenticatedText
+                : style.unauthenticatedText
+            }
+          >
+            {authentication}
+          </span>
+        )}
+      </Typography>
       <Button
         variant='contained'
         size='large'
