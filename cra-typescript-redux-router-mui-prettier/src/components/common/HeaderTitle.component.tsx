@@ -5,7 +5,7 @@ interface HeaderTitleProps {
 }
 
 const HeaderTitleComponent = ({ title }: HeaderTitleProps) => (
-  <Typography variant='h1'>{title}</Typography>
+  <Typography variant='h2'>{title}</Typography>
 );
 
 export default HeaderTitleComponent;
