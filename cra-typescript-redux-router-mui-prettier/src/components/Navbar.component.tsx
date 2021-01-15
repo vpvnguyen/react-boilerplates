@@ -1,30 +1,43 @@
-import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Button, makeStyles } from "@material-ui/core";
+import { ClassNameMap } from "@material-ui/styles";
 import { selectIsAuthenticated } from "../redux/selectors/authenticationSelector";
 import HeaderTitleComponent from "./common/HeaderTitle.component";
 
-const style: CSSProperties = {
-  borderStyle: "solid",
-};
+const useStyles = makeStyles(() => ({
+  component: {
+    borderStyle: "solid",
+  },
+  link: {
+    textDecoration: "none",
+    "&:visited": {
+      textDecoration: "none",
+    },
+  },
+}));
 
 const NavbarComponent = () => {
-  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const styles: ClassNameMap = useStyles();
+  const isAuthenticated: boolean = useSelector(selectIsAuthenticated);
 
   return (
-    <div style={style}>
+    <div className={styles.component}>
       <HeaderTitleComponent title={"Navbar Component"} />
-      <div>
-        <Link to='/'>Home Page</Link>
-      </div>
 
-      {isAuthenticated && (
-        <div>
-          <Link to='/dashboard'>Dashboard Page</Link>
-        </div>
-      )}
+      <Button component={Link} to='/' variant='outlined' color='primary'>
+        Home Page
+      </Button>
 
-      {!isAuthenticated && <div>Log in to view Dashboard Page</div>}
+      <Button
+        component={Link}
+        to='/dashboard'
+        variant='outlined'
+        color='secondary'
+        disabled={!isAuthenticated}
+      >
+        Dashboard Page
+      </Button>
     </div>
   );
 };
