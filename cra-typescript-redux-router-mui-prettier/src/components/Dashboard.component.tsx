@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import { Typography } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { selectIsAuthenticated } from "../redux/selectors/authenticationSelector";
+import Form from "./Form.component";
 
 interface Style {
   component: CSSProperties;
@@ -27,6 +28,7 @@ const DashboardComponent = () => {
     <div style={style.component}>
       <Typography>Dashboard component</Typography>
       <Typography>Very sensitive data</Typography>
+      <Form />
     </div>
   );
 };
