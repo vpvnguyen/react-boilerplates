@@ -41,11 +41,14 @@ const Form = () => {
 
   return (
     <Grid container direction='column' justify='center' alignItems='center'>
-      {/* <form onSubmit={(event) => onSubmit(event)}> */}
       <form
         style={{ borderStyle: "solid", margin: "30px" }}
-        onSubmit={handleSubmit(validateFormData)}
+        onSubmit={(event) => onSubmit(event)}
       >
+        {/* <form
+        style={{ borderStyle: "solid", margin: "30px" }}
+        onSubmit={handleSubmit(validateFormData)}
+      > */}
         <Grid item>
           <Typography variant='h5'>Example React Hook Form</Typography>
         </Grid>
