@@ -17,10 +17,10 @@ const styles: CSSProperties = {
 };
 
 export default function FormFirstErrorDetected() {
-  const { register, errors, handleSubmit } = useForm<IFormInputs>({
+  const { register, errors, handleSubmit, watch } = useForm<IFormInputs>({
     // mode: 'onSubmit',
-    // mode: "onChange",
-    mode: "onBlur",
+    mode: "onChange",
+    // mode: "onBlur",
     reValidateMode: "onChange",
     defaultValues: {},
     resolver: undefined,
@@ -31,6 +31,10 @@ export default function FormFirstErrorDetected() {
   });
 
   const onSubmit = (data: IFormInputs) => console.log(data);
+  console.log(watch("singleErrorInput"));
+  console.log(watch("multipleErrorInput"));
+  console.log(watch("numberInput"));
+  console.log(errors);
 
   return (
     <form style={styles} onSubmit={handleSubmit(onSubmit)}>
@@ -54,7 +58,7 @@ export default function FormFirstErrorDetected() {
         <p>Your input is required</p>
       )}
       {errors.multipleErrorInput?.type === "minLength" && (
-        <p>Your input must be larger then 3 characters</p>
+        <p>Your input must be larger then 5 characters</p>
       )}
 
       <label>Error with value</label>
