@@ -8,6 +8,11 @@ import AuthenticationComponent from "./components/Authentication.component";
 import NavbarComponent from "./components/Navbar.component";
 import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
 
+const colors = {
+  BROWN: "#964B00",
+  PURPLE: "#800080",
+};
+
 const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
@@ -21,16 +26,16 @@ const theme = createMuiTheme({
   },
   palette: {
     type: "dark",
-    // primary: {
-    //   light: "#ffffff",
-    //   main: "#3f51b5",
-    //   dark: "#301934",
-    // },
-    // secondary: {
-    //   light: "#ffcccb",
-    //   main: "#f50057",
-    //   dark: "#B22222",
-    // },
+    primary: {
+      light: "#ffffff",
+      main: colors.BROWN,
+      dark: "#301934",
+    },
+    secondary: {
+      light: "#ffcccb",
+      main: colors.PURPLE,
+      dark: "#B22222",
+    },
   },
   typography: {
     fontSize: 16,
