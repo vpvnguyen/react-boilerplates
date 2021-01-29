@@ -8,6 +8,8 @@ import AuthenticationComponent from "./components/Authentication.component";
 import AppBar from "./components/AppBar";
 import NavbarComponent from "./components/Navbar.component";
 import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
+import { SnackbarProvider } from "notistack";
+import { makeStyles } from "@material-ui/core/styles";
 
 declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme {
@@ -18,6 +20,7 @@ declare module "@material-ui/core/styles/createMuiTheme" {
     custom: any;
   }
 }
+
 const colors = {
   RED: "#FF0000",
   ORANGE: "#FF7F00",
@@ -65,36 +68,57 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
+const useStyles = makeStyles({
+  root: {
+    position: "absolute",
+    height: 100,
+    bottom: 100,
+    top: "-20px",
+    left: 10,
+    backgroundColor: "red",
+  },
+});
 
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Environment: <code>{process.env.NODE_ENV}</code>
-        </p>
+const App = () => {
+  const classes = useStyles();
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
 
-        <RootLayout>
-          <Router>
-            <AppBar />
-            <NavbarComponent />
-            <AuthenticationComponent />
+      <div className='App'>
+        <header className='App-header'>
+          <img src={logo} className='App-logo' alt='logo' />
+          <p>
+            Environment: <code>{process.env.NODE_ENV}</code>
+          </p>
 
-            <Switch>
-              <Route exact path='/'>
-                <HomePage />
-              </Route>
-              <Route path='/dashboard'>
-                <DashboardPage />
-              </Route>
-            </Switch>
-          </Router>
-        </RootLayout>
-      </header>
-    </div>
-  </ThemeProvider>
-);
+          <SnackbarProvider
+            maxSnack={3}
+            classes={{
+              root: classes.root,
+            }}
+          >
+            <RootLayout>
+              <Router>
+                <AppBar />
+                <NavbarComponent />
+                <AuthenticationComponent />
+
+                <Switch>
+                  <Route exact path='/'>
+                    <HomePage />
+                  </Route>
+                  <Route path='/dashboard'>
+                    <DashboardPage />
+                  </Route>
+                </Switch>
+              </Router>
+            </RootLayout>
+          </SnackbarProvider>
+        </header>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 export default App;
